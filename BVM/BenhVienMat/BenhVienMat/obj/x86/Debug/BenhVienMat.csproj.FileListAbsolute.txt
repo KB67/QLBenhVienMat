@@ -8,3 +8,5 @@ C:\Users\Khoi KB\Desktop\BVM\BenhVienMat\BenhVienMat\obj\x86\Debug\BenhVienMat.p
 C:\Users\Khoi KB\Desktop\BVM\BenhVienMat\BenhVienMat\obj\x86\Debug\BenhVienMat.Form2.resources
 C:\Users\Khoi KB\Desktop\BVM\BenhVienMat\BenhVienMat\obj\x86\Debug\BenhVienMat.csprojResolveAssemblyReference.cache
 C:\Users\Khoi KB\Desktop\BVM\BenhVienMat\BenhVienMat\bin\Debug\BenhVienMat.exe.config
+C:\Users\Khoi KB\Desktop\BVM\BenhVienMat\BenhVienMat\obj\x86\Debug\BenhVienMat.frmLoading.resources
+C:\Users\Khoi KB\Desktop\BVM\BenhVienMat\BenhVienMat\obj\x86\Debug\BenhVienMat.MainForm.resources

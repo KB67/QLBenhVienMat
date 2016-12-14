@@ -26,6 +26,7 @@ namespace BenhVienMat
         {
             cnstr = ConfigurationManager.ConnectionStrings["cnstr"].ConnectionString;
             cn = new SqlConnection(cnstr);
+            dataGridView1.DataSource = GetCustomerDataset().Tables[0];
 
          
         }

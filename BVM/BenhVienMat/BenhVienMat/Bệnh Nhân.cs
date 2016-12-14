@@ -52,6 +52,7 @@ namespace BenhVienMat
             {
                 cn.Close();
             }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -75,6 +76,11 @@ namespace BenhVienMat
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+        
         }
     }
 }
