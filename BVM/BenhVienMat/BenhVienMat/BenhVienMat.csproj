@@ -47,17 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bệnh Nhân.cs">
+    <Compile Include="BenhNhan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bệnh Nhân.Designer.cs">
-      <DependentUpon>Bệnh Nhân.cs</DependentUpon>
+    <Compile Include="BenhNhan.Designer.cs">
+      <DependentUpon>BenhNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="Bác Sĩ.cs">
+    <Compile Include="BacSi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bác Sĩ.Designer.cs">
-      <DependentUpon>Bác Sĩ.cs</DependentUpon>
+      <DependentUpon>BacSi.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoading.cs">
       <SubType>Form</SubType>
@@ -79,11 +79,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Bệnh Nhân.resx">
-      <DependentUpon>Bệnh Nhân.cs</DependentUpon>
+    <EmbeddedResource Include="BacSi.resx">
+      <DependentUpon>BacSi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BenhNhan.resx">
+      <DependentUpon>BenhNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bác Sĩ.resx">
-      <DependentUpon>Bác Sĩ.cs</DependentUpon>
+      <DependentUpon>BacSi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
