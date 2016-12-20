@@ -61,7 +61,38 @@ namespace BenhVienMat
 
         private void bt1_Click(object sender, EventArgs e)
         {
+            string sql = @"INSERT INTO BacSi(MaBS,Ho,Ten,NgaySinh,DiaChi,SDT) VALUES(N'" + txtMaBS.Text + "',N'" + txtHo.Text + "',N'" + txtTen.Text + "',N'" + txtSDT.Text + "',N'" + txtDiaChi.Text + "',N'"  + txtNgaySinh.Text + "') ";
 
+            try
+            {
+                SqlCommand cm = new SqlCommand(sql, cn);
+                cm.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Loi Them Du Lieu\n" + ex.ToString());
+            }
+        }
+
+        private void bt3_Click(object sender, EventArgs e)
+        {
+            string sql = @"DELETE FROM BacSi WHERE MaBS='" + txtMaBS.Text + "'";
+            SqlCommand cm = new SqlCommand(sql, cn);
+            cm.ExecuteNonQuery();
+        }
+
+        private void bt2_Click(object sender, EventArgs e)
+        {
+            string sql = @"UPDATE BacSi SET MaBS='" + txtMaBS.Text + "',Ho='" + txtHo.Text + "',Ten='" + txtTen.Text + "',DiaChi='" + txtDiaChi.Text + "',SDT='" + txtSDT.Text + "',Ngaysinh='" + txtNgaySinh.Text + "'";
+            SqlCommand cmd = new SqlCommand(sql, cn);
+            cmd.ExecuteNonQuery();
+        }
+
+        private void bt5_Click(object sender, EventArgs e)
+        {
+            MainForm frmForm1 = new MainForm();
+            frmForm1.Show();
         }
     }
 }

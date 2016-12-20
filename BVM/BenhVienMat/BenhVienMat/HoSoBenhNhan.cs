@@ -66,7 +66,7 @@ namespace BenhVienMat
         private void button2_Click(object sender, EventArgs e)
         {
             string sql = @"INSERT INTO HoSoBenhNhan(MaHSBN,MaBN,NgayKham,MaLop,TieuSuBenhLy) VALUES(N'" + txtMaHSBN.Text + "',N'" + txtMaBN.Text + "',N'" + txtNgayKham.Text + "',N'" + txtTieuSuBenhLy.Text + "') ";
-           
+            
             try
             {
                 SqlCommand cm = new SqlCommand(sql,cn);
@@ -83,6 +83,14 @@ namespace BenhVienMat
         private void button4_Click(object sender, EventArgs e)
         {
             string sql = @"DELETE FROM HoSoBenhNhan WHERE MaHSBN='" + txtMaHSBN.Text + "'";
+            SqlCommand cm = new SqlCommand(sql, cn);
+            cm.ExecuteNonQuery();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string sql = @"UPDATE HoSoBenhNhan SET MaHSBN='" + txtMaHSBN.Text + "',MaBN='" + txtMaBN.Text + "',NgayKham='" + txtNgayKham.Text + "',TieusuBenhLy='" + txtTieuSuBenhLy.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
 

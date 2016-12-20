@@ -55,7 +55,18 @@ namespace BenhVienMat
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            string sql = @"INSERT INTO BenhNhan(MaBN,Ho,Ten,NgaySinh,DiaChi,Gioitinh) VALUES(N'" + txtMaBN.Text + "',N'" + txtHoBN.Text + "',N'" + txtTenBN.Text + "',N'" + txtNgaySinh.Text + "',N'" + txtDiaChi.Text + "',N'" + txtGioiTinh.Text + "') ";
 
+            try
+            {
+                SqlCommand cm = new SqlCommand(sql, cn);
+                cm.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Loi Them Du Lieu\n" + ex.ToString());
+            }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -81,6 +92,26 @@ namespace BenhVienMat
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
         
+        }
+
+        private void bt2_Click(object sender, EventArgs e)
+        {
+            string sql = @"UPDATE BenhNhan SET MaBN='" + txtMaBN.Text + "',Ho='" + txtHoBN.Text + "',Ten='" + txtTenBN.Text + "',DiaChi='" + txtDiaChi.Text + "',Gioitinh='" + txtGioiTinh.Text + "',Ngaysinh='" + txtNgaySinh.Text + "'";
+            SqlCommand cmd = new SqlCommand(sql, cn);
+            cmd.ExecuteNonQuery();
+        }
+
+        private void bt3_Click(object sender, EventArgs e)
+        {
+            string sql = @"DELETE FROM BenhNhan WHERE MaBN='" + txtMaBN.Text + "'";
+            SqlCommand cm = new SqlCommand(sql, cn);
+            cm.ExecuteNonQuery();
+        }
+
+        private void bt5_Click(object sender, EventArgs e)
+        {
+            MainForm frmForm1 = new MainForm();
+            frmForm1.Show();
         }
     }
 }
