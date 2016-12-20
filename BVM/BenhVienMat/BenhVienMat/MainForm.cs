@@ -30,7 +30,8 @@ namespace BenhVienMat
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            HoSoBenhNhan frmForm1 = new HoSoBenhNhan();
+            frmForm1.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
