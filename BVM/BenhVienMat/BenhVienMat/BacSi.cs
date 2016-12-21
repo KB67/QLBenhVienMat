@@ -61,15 +61,21 @@ namespace BenhVienMat
 
         private void bt1_Click(object sender, EventArgs e)
         {
-            string sql = @"INSERT INTO BacSi(MaBS,Ho,Ten,NgaySinh,DiaChi,SDT) VALUES(N'" + txtMaBS.Text + "',N'" + txtHo.Text + "',N'" + txtTen.Text + "',N'" + txtSDT.Text + "',N'" + txtDiaChi.Text + "',N'"  + txtNgaySinh.Text + "') ";
+            
 
             try
             {
+                using (cn)
+            {
+                cn.Open();
+                string sql = @"INSERT INTO BacSi(MaBS,Ho,Ten,NgaySinh,DiaChi,SDT) VALUES(N'" + txtMaBS.Text + "',N'" + txtHo.Text + "',N'" + txtTen.Text + "',N'" + txtSDT.Text + "',N'" + txtDiaChi.Text + "',N'"  + txtNgaySinh.Text + "') ";
                 SqlCommand cm = new SqlCommand(sql, cn);
                 cm.ExecuteNonQuery();
 
             }
+            }
             catch (SqlException ex)
+            
             {
                 MessageBox.Show("Loi Them Du Lieu\n" + ex.ToString());
             }
@@ -92,6 +98,7 @@ namespace BenhVienMat
         private void bt5_Click(object sender, EventArgs e)
         {
             this.Close();
+            cn.Close();
             MainForm frmForm1 = new MainForm();
             frmForm1.Show();
         }
