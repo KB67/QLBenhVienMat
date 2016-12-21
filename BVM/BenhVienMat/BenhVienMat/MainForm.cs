@@ -18,18 +18,21 @@ namespace BenhVienMat
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             Form2 frmForm1 = new Form2();
             frmForm1.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             Form1 frmForm1 = new Form1();
             frmForm1.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            
             HoSoBenhNhan frmForm1 = new HoSoBenhNhan();
             frmForm1.Show();
         }

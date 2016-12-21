@@ -31,15 +31,13 @@
             this.txtHo = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.txtMaBS = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNhapTim = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.bt6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt5 = new System.Windows.Forms.Button();
@@ -54,6 +52,7 @@
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.cbb = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,7 +61,7 @@
             // txtHo
             // 
             this.txtHo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHo.Location = new System.Drawing.Point(372, 364);
+            this.txtHo.Location = new System.Drawing.Point(372, 354);
             this.txtHo.Name = "txtHo";
             this.txtHo.Size = new System.Drawing.Size(390, 48);
             this.txtHo.TabIndex = 18;
@@ -84,14 +83,14 @@
             this.txtMaBS.TabIndex = 20;
             this.txtMaBS.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox1
+            // txtNhapTim
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNhapTim.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(155, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(522, 48);
-            this.textBox1.TabIndex = 2;
+            this.txtNhapTim.Location = new System.Drawing.Point(155, 56);
+            this.txtNhapTim.Name = "txtNhapTim";
+            this.txtNhapTim.Size = new System.Drawing.Size(522, 48);
+            this.txtNhapTim.TabIndex = 2;
             // 
             // label3
             // 
@@ -132,6 +131,7 @@
             this.bt6.TabIndex = 3;
             this.bt6.Text = "Tìm";
             this.bt6.UseVisualStyleBackColor = true;
+            this.bt6.Click += new System.EventHandler(this.bt6_Click);
             // 
             // label2
             // 
@@ -145,10 +145,9 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cbb);
             this.groupBox2.Controls.Add(this.bt6);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.txtNhapTim);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(69, 111);
@@ -157,30 +156,6 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(927, 51);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(190, 44);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Theo tên";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(719, 51);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(190, 44);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Theo mã";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -238,7 +213,7 @@
             // bt4
             // 
             this.bt4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt4.Location = new System.Drawing.Point(830, 68);
+            this.bt4.Location = new System.Drawing.Point(839, 68);
             this.bt4.Name = "bt4";
             this.bt4.Size = new System.Drawing.Size(141, 88);
             this.bt4.TabIndex = 1;
@@ -281,7 +256,7 @@
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(1120, 364);
+            this.txtSDT.Location = new System.Drawing.Point(1120, 354);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(318, 48);
             this.txtSDT.TabIndex = 16;
@@ -322,6 +297,14 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Địa Chỉ";
             // 
+            // cbb
+            // 
+            this.cbb.FormattingEnabled = true;
+            this.cbb.Location = new System.Drawing.Point(760, 56);
+            this.cbb.Name = "cbb";
+            this.cbb.Size = new System.Drawing.Size(381, 48);
+            this.cbb.TabIndex = 4;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -360,15 +343,13 @@
         private System.Windows.Forms.TextBox txtHo;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.TextBox txtMaBS;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNhapTim;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button bt6;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button bt5;
@@ -383,5 +364,6 @@
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.TextBox txtNgaySinh;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbb;
     }
 }

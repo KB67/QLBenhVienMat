@@ -110,8 +110,29 @@ namespace BenhVienMat
 
         private void bt5_Click(object sender, EventArgs e)
         {
+            this.Close();
             MainForm frmForm1 = new MainForm();
             frmForm1.Show();
+        }
+
+        private void bt6_Click(object sender, EventArgs e)
+        {
+            if (cbb.Text == "Mã Bệnh Nhân")
+            {
+                SqlDataAdapter sda = new SqlDataAdapter(" SELECT * From dbo.BenhNhan WHERE MaBN like '" + txtNhapTim.Text + "'", cn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                if (dataGridView1.RowCount > 1)
+                {
+                    MessageBox.Show("Tìm thấy" + (dataGridView1.RowCount - 1) + "Bệnh Nhân!");
+
+                }
+                if (dataGridView1.RowCount == -1)
+                {
+                    MessageBox.Show("Không Tìm Thấy");
+                }
+            }
         }
     }
 }

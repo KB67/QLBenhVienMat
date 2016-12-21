@@ -59,6 +59,7 @@ namespace BenhVienMat
 
         private void button6_Click(object sender, EventArgs e)
         {
+            this.Close();
             MainForm frmForm1 = new MainForm();
             frmForm1.Show();
         }
@@ -93,6 +94,42 @@ namespace BenhVienMat
             string sql = @"UPDATE HoSoBenhNhan SET MaHSBN='" + txtMaHSBN.Text + "',MaBN='" + txtMaBN.Text + "',NgayKham='" + txtNgayKham.Text + "',TieusuBenhLy='" + txtTieuSuBenhLy.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (cbb.Text == "Mã HSBN")
+            {
+                SqlDataAdapter sda = new SqlDataAdapter(" SELECT * From dbo.HoSoBenhNhan WHERE MaHSBN like '" + txtNhapTim.Text + "'", cn);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                if (dataGridView1.RowCount > 1)
+                {
+                    MessageBox.Show("Tìm thấy" + (dataGridView1.RowCount - 1) + "Hồ Sơ!");
+
+                }
+                if (dataGridView1.RowCount == - 1)
+                {
+                    MessageBox.Show("Không Tìm Thấy");
+                }
+            }
 
         }
     }
