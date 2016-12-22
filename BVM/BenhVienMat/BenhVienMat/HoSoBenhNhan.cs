@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Globalization;
 
 namespace BenhVienMat
 {
@@ -72,8 +73,13 @@ namespace BenhVienMat
             {
                 using (cn)
                 {
+                    if (txtNgayKham.Text.Length != 0)
+                    {
+                        DateTime NgayKham = Convert.ToDateTime(txtNgayKham.Text);
+                        
+                    }
                     cn.Open();
-                    string sql = @"INSERT INTO HoSoBenhNhan(MaHSBN,MaBN,NgayKham,TieuSuBenhLy) VALUES(N'" + txtMaHSBN.Text + "',N'" + txtMaBN.Text + "',N'" + dtPicker.Text.ToString() + "',N'" + txtTieuSuBenhLy.Text + "') ";
+                    string sql = @"INSERT INTO HoSoBenhNhan(MaHSBN,MaBN,NgayKham,TieuSuBenhLy) VALUES(N'" + txtMaHSBN.Text + "',N'" + txtMaBN.Text + "',N'" + txtNgayKham.Text + "',N'" + txtTieuSuBenhLy.Text + "') ";
                     SqlCommand cm = new SqlCommand(sql, cn);
                     cm.ExecuteNonQuery();            
                 }
@@ -99,7 +105,7 @@ namespace BenhVienMat
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string sql = @"UPDATE HoSoBenhNhan SET MaHSBN='" + txtMaHSBN.Text + "',MaBN='" + txtMaBN.Text + "',NgayKham='" + dtPicker.Text.ToString() + "',TieusuBenhLy='" + txtTieuSuBenhLy.Text + "'";
+            string sql = @"UPDATE HoSoBenhNhan SET MaHSBN='" + txtMaHSBN.Text + "',MaBN='" + txtMaBN.Text + "',NgayKham='" + txtNgayKham.Text + "',TieusuBenhLy='" + txtTieuSuBenhLy.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
 
@@ -117,7 +123,7 @@ namespace BenhVienMat
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

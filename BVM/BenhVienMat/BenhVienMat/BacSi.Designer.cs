@@ -38,6 +38,7 @@
             this.bt6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt5 = new System.Windows.Forms.Button();
@@ -52,7 +53,6 @@
             this.txtTen = new System.Windows.Forms.TextBox();
             this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cbb = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -156,6 +156,14 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
+            // 
+            // cbb
+            // 
+            this.cbb.FormattingEnabled = true;
+            this.cbb.Location = new System.Drawing.Point(760, 56);
+            this.cbb.Name = "cbb";
+            this.cbb.Size = new System.Drawing.Size(381, 48);
+            this.cbb.TabIndex = 4;
             // 
             // label1
             // 
@@ -286,6 +294,7 @@
             this.txtNgaySinh.Name = "txtNgaySinh";
             this.txtNgaySinh.Size = new System.Drawing.Size(390, 48);
             this.txtNgaySinh.TabIndex = 17;
+            this.txtNgaySinh.TextChanged += new System.EventHandler(this.txtNgaySinh_TextChanged);
             // 
             // label7
             // 
@@ -296,14 +305,6 @@
             this.label7.Size = new System.Drawing.Size(135, 40);
             this.label7.TabIndex = 12;
             this.label7.Text = "Địa Chỉ";
-            // 
-            // cbb
-            // 
-            this.cbb.FormattingEnabled = true;
-            this.cbb.Location = new System.Drawing.Point(760, 56);
-            this.cbb.Name = "cbb";
-            this.cbb.Size = new System.Drawing.Size(381, 48);
-            this.cbb.TabIndex = 4;
             // 
             // Form2
             // 
