@@ -30,6 +30,7 @@
         {
             this.FormName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbb = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtNhapTim = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtMaHSBN = new System.Windows.Forms.TextBox();
             this.txtMaBN = new System.Windows.Forms.TextBox();
-            this.txtNgayKham = new System.Windows.Forms.TextBox();
             this.txtTieuSuBenhLy = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button6 = new System.Windows.Forms.Button();
@@ -48,7 +48,8 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.cbb = new System.Windows.Forms.ComboBox();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            this.dtPicker = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -77,6 +78,15 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
+            // 
+            // cbb
+            // 
+            this.cbb.FormattingEnabled = true;
+            this.cbb.Location = new System.Drawing.Point(657, 85);
+            this.cbb.Name = "cbb";
+            this.cbb.Size = new System.Drawing.Size(369, 48);
+            this.cbb.TabIndex = 4;
+            this.cbb.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -168,13 +178,6 @@
             this.txtMaBN.Size = new System.Drawing.Size(395, 35);
             this.txtMaBN.TabIndex = 4;
             // 
-            // txtNgayKham
-            // 
-            this.txtNgayKham.Location = new System.Drawing.Point(989, 345);
-            this.txtNgayKham.Name = "txtNgayKham";
-            this.txtNgayKham.Size = new System.Drawing.Size(395, 35);
-            this.txtNgayKham.TabIndex = 4;
-            // 
             // txtTieuSuBenhLy
             // 
             this.txtTieuSuBenhLy.Location = new System.Drawing.Point(989, 449);
@@ -250,23 +253,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // cbb
+            // dtPicker
             // 
-            this.cbb.FormattingEnabled = true;
-            this.cbb.Location = new System.Drawing.Point(657, 85);
-            this.cbb.Name = "cbb";
-            this.cbb.Size = new System.Drawing.Size(369, 48);
-            this.cbb.TabIndex = 4;
-            this.cbb.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.dtPicker.Location = new System.Drawing.Point(986, 345);
+            this.dtPicker.Name = "dtPicker";
+            this.dtPicker.Size = new System.Drawing.Size(397, 35);
+            this.dtPicker.TabIndex = 6;
             // 
             // HoSoBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1411, 1133);
+            this.Controls.Add(this.dtPicker);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtTieuSuBenhLy);
-            this.Controls.Add(this.txtNgayKham);
             this.Controls.Add(this.txtMaBN);
             this.Controls.Add(this.txtMaHSBN);
             this.Controls.Add(this.label2);
@@ -302,7 +303,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaHSBN;
         private System.Windows.Forms.TextBox txtMaBN;
-        private System.Windows.Forms.TextBox txtNgayKham;
         private System.Windows.Forms.TextBox txtTieuSuBenhLy;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button button6;
@@ -311,5 +311,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cbb;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private System.Windows.Forms.DateTimePicker dtPicker;
     }
 }

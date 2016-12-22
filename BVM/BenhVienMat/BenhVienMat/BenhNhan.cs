@@ -56,9 +56,10 @@ namespace BenhVienMat
         private void button1_Click(object sender, EventArgs e)
         {
             string sql = @"INSERT INTO BenhNhan(MaBN,Ho,Ten,NgaySinh,DiaChi,Gioitinh) VALUES(N'" + txtMaBN.Text + "',N'" + txtHoBN.Text + "',N'" + txtTenBN.Text + "',N'" + txtNgaySinh.Text + "',N'" + txtDiaChi.Text + "',N'" + txtGioiTinh.Text + "') ";
-
+            using (cn) 
             try
             {
+                cn.Open();
                 SqlCommand cm = new SqlCommand(sql, cn);
                 cm.ExecuteNonQuery();
 
@@ -103,6 +104,7 @@ namespace BenhVienMat
 
         private void bt3_Click(object sender, EventArgs e)
         {
+                cn.Open();
             string sql = @"DELETE FROM BenhNhan WHERE MaBN='" + txtMaBN.Text + "'";
             SqlCommand cm = new SqlCommand(sql, cn);
             cm.ExecuteNonQuery();
@@ -111,6 +113,7 @@ namespace BenhVienMat
         private void bt5_Click(object sender, EventArgs e)
         {
             this.Close();
+            cn.Close();
             MainForm frmForm1 = new MainForm();
             frmForm1.Show();
         }
@@ -133,6 +136,11 @@ namespace BenhVienMat
                     MessageBox.Show("Không Tìm Thấy");
                 }
             }
+        }
+
+        private void FormName_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

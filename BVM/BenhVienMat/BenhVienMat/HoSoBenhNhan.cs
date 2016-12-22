@@ -26,6 +26,7 @@ namespace BenhVienMat
         {
             cnstr = ConfigurationManager.ConnectionStrings["cnstr"].ConnectionString;
             cn = new SqlConnection(cnstr);
+            
             dataGridView1.DataSource = GetCustomerDataset().Tables[0];
         }
         public DataSet GetCustomerDataset()
@@ -60,18 +61,24 @@ namespace BenhVienMat
         private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
+            cn.Close();
             MainForm frmForm1 = new MainForm();
             frmForm1.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = @"INSERT INTO HoSoBenhNhan(MaHSBN,MaBN,NgayKham,MaLop,TieuSuBenhLy) VALUES(N'" + txtMaHSBN.Text + "',N'" + txtMaBN.Text + "',N'" + txtNgayKham.Text + "',N'" + txtTieuSuBenhLy.Text + "') ";
-            
             try
             {
-                SqlCommand cm = new SqlCommand(sql,cn);
-                cm.ExecuteNonQuery();
+                using (cn)
+                {
+                    cn.Open();
+                    string sql = @"INSERT INTO HoSoBenhNhan(MaHSBN,MaBN,NgayKham,TieuSuBenhLy) VALUES(N'" + txtMaHSBN.Text + "',N'" + txtMaBN.Text + "',N'" + dtPicker.Text.ToString() + "',N'" + txtTieuSuBenhLy.Text + "') ";
+                    SqlCommand cm = new SqlCommand(sql, cn);
+                    cm.ExecuteNonQuery();            
+                }
+
+                
 
             }
             catch (SqlException ex)
@@ -83,6 +90,7 @@ namespace BenhVienMat
 
         private void button4_Click(object sender, EventArgs e)
         {
+            cn.Open();
             string sql = @"DELETE FROM HoSoBenhNhan WHERE MaHSBN='" + txtMaHSBN.Text + "'";
             SqlCommand cm = new SqlCommand(sql, cn);
             cm.ExecuteNonQuery();
@@ -91,7 +99,7 @@ namespace BenhVienMat
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string sql = @"UPDATE HoSoBenhNhan SET MaHSBN='" + txtMaHSBN.Text + "',MaBN='" + txtMaBN.Text + "',NgayKham='" + txtNgayKham.Text + "',TieusuBenhLy='" + txtTieuSuBenhLy.Text + "'";
+            string sql = @"UPDATE HoSoBenhNhan SET MaHSBN='" + txtMaHSBN.Text + "',MaBN='" + txtMaBN.Text + "',NgayKham='" + dtPicker.Text.ToString() + "',TieusuBenhLy='" + txtTieuSuBenhLy.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
 

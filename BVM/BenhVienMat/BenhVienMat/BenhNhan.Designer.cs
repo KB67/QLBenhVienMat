@@ -67,6 +67,7 @@
             this.FormName.TabIndex = 0;
             this.FormName.Text = "THÔNG TIN BỆNH NHÂN";
             this.FormName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.FormName.Click += new System.EventHandler(this.FormName_Click);
             // 
             // bt1
             // 
