@@ -122,5 +122,10 @@ namespace BenhVienMat
                 }
             }
         }
+
+        private void txtNgaySinh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
