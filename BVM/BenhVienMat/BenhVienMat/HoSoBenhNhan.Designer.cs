@@ -49,7 +49,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
-            this.txtNgayKham = new System.Windows.Forms.TextBox();
+            this.dtbNgayKham = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -253,20 +253,21 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtNgayKham
+            // dtbNgayKham
             // 
-            this.txtNgayKham.Location = new System.Drawing.Point(989, 345);
-            this.txtNgayKham.Name = "txtNgayKham";
-            this.txtNgayKham.Size = new System.Drawing.Size(395, 35);
-            this.txtNgayKham.TabIndex = 4;
+            this.dtbNgayKham.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtbNgayKham.Location = new System.Drawing.Point(935, 347);
+            this.dtbNgayKham.Name = "dtbNgayKham";
+            this.dtbNgayKham.Size = new System.Drawing.Size(448, 35);
+            this.dtbNgayKham.TabIndex = 6;
             // 
             // HoSoBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1411, 1133);
+            this.Controls.Add(this.dtbNgayKham);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.txtNgayKham);
             this.Controls.Add(this.txtTieuSuBenhLy);
             this.Controls.Add(this.txtMaBN);
             this.Controls.Add(this.txtMaHSBN);
@@ -312,6 +313,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox cbb;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
-        private System.Windows.Forms.TextBox txtNgayKham;
+        private System.Windows.Forms.DateTimePicker dtbNgayKham;
     }
 }

@@ -68,7 +68,8 @@ namespace BenhVienMat
                 using (cn)
             {
                 cn.Open();
-                string sql = @"INSERT INTO BacSi(MaBS,Ho,Ten,NgaySinh,DiaChi,SDT) VALUES(N'" + txtMaBS.Text + "',N'" + txtHo.Text + "',N'" + txtTen.Text + "',N'" + txtSDT.Text + "',N'" + txtDiaChi.Text + "',N'"  + txtNgaySinh.Text + "') ";
+                string ngay = dtpNgaySinh.Value.ToShortDateString();
+                string sql = @"INSERT INTO BacSi(MaBS,Ho,Ten,NgaySinh,DiaChi,SDT) VALUES(N'" + txtMaBS.Text + "',N'" + txtHo.Text + "',N'" + txtTen.Text + "',N'" + txtSDT.Text + "',N'" + txtDiaChi.Text + "') ";
                 SqlCommand cm = new SqlCommand(sql, cn);
                 cm.ExecuteNonQuery();
 
@@ -90,7 +91,7 @@ namespace BenhVienMat
 
         private void bt2_Click(object sender, EventArgs e)
         {
-            string sql = @"UPDATE BacSi SET MaBS='" + txtMaBS.Text + "',Ho='" + txtHo.Text + "',Ten='" + txtTen.Text + "',DiaChi='" + txtDiaChi.Text + "',SDT='" + txtSDT.Text + "',Ngaysinh='" + txtNgaySinh.Text + "'";
+            string sql = @"UPDATE BacSi SET MaBS='" + txtMaBS.Text + "',Ho='" + txtHo.Text + "',Ten='" + txtTen.Text + "',DiaChi='" + txtDiaChi.Text + "',SDT='" + txtSDT.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
         }
