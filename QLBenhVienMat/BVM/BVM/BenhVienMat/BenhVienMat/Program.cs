@@ -15,7 +15,7 @@ namespace BenhVienMat
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HoSoBenhNhan());
+            Application.Run(new Form2());
         }
     }
 }

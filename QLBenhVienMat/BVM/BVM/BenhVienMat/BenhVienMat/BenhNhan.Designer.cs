@@ -111,6 +111,7 @@
             this.bt4.TabIndex = 1;
             this.bt4.Text = "Lưu";
             this.bt4.UseVisualStyleBackColor = true;
+            this.bt4.Click += new System.EventHandler(this.bt4_Click);
             // 
             // bt5
             // 

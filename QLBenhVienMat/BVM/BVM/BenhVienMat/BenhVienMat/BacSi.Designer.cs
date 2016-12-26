@@ -51,8 +51,8 @@
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTen = new System.Windows.Forms.TextBox();
-            this.txtNgaySinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.dtbNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -287,15 +287,6 @@
             this.txtTen.Size = new System.Drawing.Size(390, 48);
             this.txtTen.TabIndex = 18;
             // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgaySinh.Location = new System.Drawing.Point(1049, 283);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(390, 48);
-            this.txtNgaySinh.TabIndex = 17;
-            this.txtNgaySinh.TextChanged += new System.EventHandler(this.txtNgaySinh_TextChanged);
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -306,14 +297,22 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Địa Chỉ";
             // 
+            // dtbNgaySinh
+            // 
+            this.dtbNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtbNgaySinh.Location = new System.Drawing.Point(1056, 291);
+            this.dtbNgaySinh.Name = "dtbNgaySinh";
+            this.dtbNgaySinh.Size = new System.Drawing.Size(383, 35);
+            this.dtbNgaySinh.TabIndex = 21;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1522, 1228);
+            this.Controls.Add(this.dtbNgaySinh);
             this.Controls.Add(this.txtTen);
             this.Controls.Add(this.txtHo);
-            this.Controls.Add(this.txtNgaySinh);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtMaBS);
             this.Controls.Add(this.label4);
@@ -363,8 +362,8 @@
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTen;
-        private System.Windows.Forms.TextBox txtNgaySinh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox cbb;
+        private System.Windows.Forms.DateTimePicker dtbNgaySinh;
     }
 }

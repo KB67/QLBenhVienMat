@@ -142,5 +142,10 @@ namespace BenhVienMat
         {
 
         }
+
+        private void bt4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

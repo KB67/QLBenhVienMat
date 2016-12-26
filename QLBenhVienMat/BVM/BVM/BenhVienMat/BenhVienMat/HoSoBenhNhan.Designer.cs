@@ -255,6 +255,7 @@
             // 
             // dtbNgayKham
             // 
+            this.dtbNgayKham.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtbNgayKham.Location = new System.Drawing.Point(935, 347);
             this.dtbNgayKham.Name = "dtbNgayKham";
             this.dtbNgayKham.Size = new System.Drawing.Size(448, 35);
