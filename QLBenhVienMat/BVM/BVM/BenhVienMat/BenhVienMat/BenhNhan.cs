@@ -97,6 +97,7 @@ namespace BenhVienMat
 
         private void bt2_Click(object sender, EventArgs e)
         {
+            cn.Open();
             string sql = @"UPDATE BenhNhan SET MaBN='" + txtMaBN.Text + "',Ho='" + txtHoBN.Text + "',Ten='" + txtTenBN.Text + "',DiaChi='" + txtDiaChi.Text + "',Gioitinh='" + txtGioiTinh.Text + "',Ngaysinh='" + txtNgaySinh.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
