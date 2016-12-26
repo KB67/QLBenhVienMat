@@ -108,6 +108,7 @@ namespace BenhVienMat
         {
             if (cbb.Text == "Mã Bác Sĩ")
             {
+                cn.Open();
                 SqlDataAdapter sda = new SqlDataAdapter(" SELECT * From dbo.BacSi WHERE MaBS like '" + txtNhapTim.Text + "'", cn);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
