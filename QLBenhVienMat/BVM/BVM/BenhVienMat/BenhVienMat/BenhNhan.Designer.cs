@@ -127,10 +127,10 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 747);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 717);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(1449, 455);
+            this.dataGridView1.Size = new System.Drawing.Size(1511, 485);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -285,9 +285,9 @@
             // txtGioiTinh
             // 
             this.txtGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGioiTinh.Location = new System.Drawing.Point(1141, 381);
+            this.txtGioiTinh.Location = new System.Drawing.Point(1264, 381);
             this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(318, 48);
+            this.txtGioiTinh.Size = new System.Drawing.Size(195, 48);
             this.txtGioiTinh.TabIndex = 6;
             // 
             // label7
@@ -312,7 +312,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1498, 1219);
+            this.ClientSize = new System.Drawing.Size(1553, 1221);
             this.Controls.Add(this.txtTenBN);
             this.Controls.Add(this.txtGioiTinh);
             this.Controls.Add(this.txtHoBN);
@@ -331,6 +331,7 @@
             this.Controls.Add(this.FormName);
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bệnh Nhân";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

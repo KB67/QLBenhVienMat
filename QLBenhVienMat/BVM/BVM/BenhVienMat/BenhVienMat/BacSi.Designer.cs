@@ -304,6 +304,7 @@
             this.dtbNgaySinh.Name = "dtbNgaySinh";
             this.dtbNgaySinh.Size = new System.Drawing.Size(383, 35);
             this.dtbNgaySinh.TabIndex = 21;
+            this.dtbNgaySinh.ValueChanged += new System.EventHandler(this.dtbNgaySinh_ValueChanged);
             // 
             // Form2
             // 

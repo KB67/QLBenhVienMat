@@ -27,10 +27,27 @@ namespace BenhVienMat
             cnstr = ConfigurationManager.ConnectionStrings["cnstr"].ConnectionString;
             cn = new SqlConnection(cnstr);
             dataGridView1.DataSource = GetCustomerDataset().Tables[0];
+            bingding();
 
          
         }
 
+        void bingding()
+        {
+            txtMaBS.DataBindings.Clear();
+            txtMaBS.DataBindings.Add("Text", dataGridView1.DataSource, "MaBS");
+            txtHo.DataBindings.Clear();
+            txtHo.DataBindings.Add("Text", dataGridView1.DataSource, "Ho");
+            txtTen.DataBindings.Clear();
+            txtTen.DataBindings.Add("Text", dataGridView1.DataSource, "Ten");
+            dtbNgaySinh.DataBindings.Clear();
+            dtbNgaySinh.DataBindings.Add("Text", dataGridView1.DataSource, "Ngaysinh");
+            txtDiaChi.DataBindings.Clear();
+            txtDiaChi.DataBindings.Add("Text", dataGridView1.DataSource, "DiaChi");
+            txtSDT.DataBindings.Clear();
+            txtSDT.DataBindings.Add("Text", dataGridView1.DataSource, "SDT");
+
+        }
         public DataSet GetCustomerDataset()
         {
             try
@@ -68,8 +85,8 @@ namespace BenhVienMat
                 using (cn)
             {
                 cn.Open();
-                string ngay = dtbNgaySinh.Value.ToShortDateString();
-                string sql = @"INSERT INTO BacSi(MaBS,Ho,Ten,NgaySinh,DiaChi,SDT) VALUES(N'" + txtMaBS.Text + "',N'" + txtHo.Text + "',N'" + txtTen.Text + "',N'" + txtSDT.Text + "',N'" + txtDiaChi.Text + "') ";
+                //string ngay = dtbNgaySinh.Value.ToShortDateString();
+                string sql = @"INSERT INTO BacSi(MaBS,Ho,Ten,NgaySinh,DiaChi,SDT) VALUES(N'" + txtMaBS.Text + "',N'" + txtHo.Text + "',N'" + txtTen.Text + "','" + dtbNgaySinh.Text + "','" + txtSDT.Text + "',N'" + txtDiaChi.Text + "') ";
                 SqlCommand cm = new SqlCommand(sql, cn);
                 cm.ExecuteNonQuery();
 
@@ -79,21 +96,26 @@ namespace BenhVienMat
             
             {
                 MessageBox.Show("Loi Them Du Lieu\n" + ex.ToString());
+                cn.Close();
             }
         }
 
         private void bt3_Click(object sender, EventArgs e)
         {
+            cn.Open();
             string sql = @"DELETE FROM BacSi WHERE MaBS='" + txtMaBS.Text + "'";
             SqlCommand cm = new SqlCommand(sql, cn);
             cm.ExecuteNonQuery();
+            cn.Close();
         }
 
         private void bt2_Click(object sender, EventArgs e)
         {
+            cn.Open();
             string sql = @"UPDATE BacSi SET MaBS='" + txtMaBS.Text + "',Ho='" + txtHo.Text + "',Ten='" + txtTen.Text + "',DiaChi='" + txtDiaChi.Text + "',SDT='" + txtSDT.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
+            cn.Close();
         }
 
         private void bt5_Click(object sender, EventArgs e)
@@ -126,6 +148,11 @@ namespace BenhVienMat
         }
 
         private void txtNgaySinh_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtbNgaySinh_ValueChanged(object sender, EventArgs e)
         {
 
         }
