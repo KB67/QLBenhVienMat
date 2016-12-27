@@ -16,7 +16,7 @@ namespace BenhVienMat
         string cnstr = "";
         SqlConnection cn;
         DataSet ds;
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -27,8 +27,26 @@ namespace BenhVienMat
           cnstr = ConfigurationManager.ConnectionStrings["cnstr"].ConnectionString;
             cn = new SqlConnection(cnstr);
             dataGridView1.DataSource = GetCustomerDataset().Tables[0];
+            bingding();
 
             
+        }
+
+        void bingding()
+        {
+            txtMaBN.DataBindings.Clear();
+            txtMaBN.DataBindings.Add("Text", dataGridView1.DataSource, "MaBN");
+            txtHoBN.DataBindings.Clear();
+            txtHoBN.DataBindings.Add("Text", dataGridView1.DataSource, "Ho");
+            txtTenBN.DataBindings.Clear();
+            txtTenBN.DataBindings.Add("Text", dataGridView1.DataSource, "Ten");
+            txtNgaySinh.DataBindings.Clear();
+            txtNgaySinh.DataBindings.Add("Text", dataGridView1.DataSource, "NgaySinh");
+            txtDiaChi.DataBindings.Clear();
+            txtDiaChi.DataBindings.Add("Text", dataGridView1.DataSource, "DiaChi");
+            txtGioiTinh.DataBindings.Clear();
+            txtGioiTinh.DataBindings.Add("Text", dataGridView1.DataSource, "Gioitinh");
+
         }
         public DataSet GetCustomerDataset()
         {
@@ -56,18 +74,18 @@ namespace BenhVienMat
         private void button1_Click(object sender, EventArgs e)
         {
             string sql = @"INSERT INTO BenhNhan(MaBN,Ho,Ten,NgaySinh,DiaChi,Gioitinh) VALUES(N'" + txtMaBN.Text + "',N'" + txtHoBN.Text + "',N'" + txtTenBN.Text + "',N'" + txtNgaySinh.Text + "',N'" + txtDiaChi.Text + "',N'" + txtGioiTinh.Text + "') ";
-            using (cn) 
-            try
-            {
-                cn.Open();
-                SqlCommand cm = new SqlCommand(sql, cn);
-                cm.ExecuteNonQuery();
+            using (cn)
+                try
+                {
+                    cn.Open();
+                    SqlCommand cm = new SqlCommand(sql, cn);
+                    cm.ExecuteNonQuery();
 
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("Loi Them Du Lieu\n" + ex.ToString());
-            }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show("Loi Them Du Lieu\n" + ex.ToString());
+                }
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -92,7 +110,7 @@ namespace BenhVienMat
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-        
+
         }
 
         private void bt2_Click(object sender, EventArgs e)
@@ -105,7 +123,7 @@ namespace BenhVienMat
 
         private void bt3_Click(object sender, EventArgs e)
         {
-                cn.Open();
+            cn.Open();
             string sql = @"DELETE FROM BenhNhan WHERE MaBN='" + txtMaBN.Text + "'";
             SqlCommand cm = new SqlCommand(sql, cn);
             cm.ExecuteNonQuery();
@@ -146,7 +164,7 @@ namespace BenhVienMat
 
         private void bt4_Click(object sender, EventArgs e)
         {
-
+            Form1_Load(sender, e);
         }
     }
 }

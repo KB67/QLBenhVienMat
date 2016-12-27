@@ -29,6 +29,21 @@ namespace BenhVienMat
             cn = new SqlConnection(cnstr);
             
             dataGridView1.DataSource = GetCustomerDataset().Tables[0];
+            bingding();
+
+        }
+
+        void bingding()
+        {
+            txtMaHSBN.DataBindings.Clear();
+            txtMaHSBN.DataBindings.Add("Text", dataGridView1.DataSource, "MaHSBN");
+            txtMaBN.DataBindings.Clear();
+            txtMaBN.DataBindings.Add("Text", dataGridView1.DataSource, "MaBN");
+            txtTieuSuBenhLy.DataBindings.Clear();
+            txtTieuSuBenhLy.DataBindings.Add("Text", dataGridView1.DataSource, "TieusuBenhLy");
+            dtbNgayKham.DataBindings.Clear();
+            dtbNgayKham.DataBindings.Add("Text", dataGridView1.DataSource, "NgayKham");
+            
         }
         public DataSet GetCustomerDataset()
         {
@@ -71,11 +86,10 @@ namespace BenhVienMat
         {
             try
             {
-                using (cn)
+                //using (cn)
                 {
                     cn.Open();
-                    string ngay = dtbNgayKham.Value.ToShortDateString();
-                    string sql = @"INSERT INTO HoSoBenhNhan(MaHSBN,MaBN,NgayKham,TieuSuBenhLy) VALUES(N'" + txtMaHSBN.Text + "',N'" + txtMaBN.Text + "',N'" + txtTieuSuBenhLy.Text + "') ";
+                    string sql = @"INSERT INTO HoSoBenhNhan(MaHSBN,MaBN,NgayKham,TieuSuBenhLy) VALUES(N'" + txtMaHSBN.Text + "',N'" + txtMaBN.Text + "','" + dtbNgayKham.Text + "',N'" + txtTieuSuBenhLy.Text + "') ";
                     SqlCommand cm = new SqlCommand(sql, cn);
                     cm.ExecuteNonQuery();            
                 }
@@ -86,6 +100,7 @@ namespace BenhVienMat
             catch (SqlException ex)
             {
                 MessageBox.Show("Loi Them Du Lieu\n" + ex.ToString());
+                cn.Close();
             }
             
         }
@@ -101,7 +116,8 @@ namespace BenhVienMat
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string sql = @"UPDATE HoSoBenhNhan SET MaHSBN='" + txtMaHSBN.Text + "',MaBN='" + txtMaBN.Text + "',TieusuBenhLy='" + txtTieuSuBenhLy.Text + "'";
+            cn.Open();
+            string sql = @"UPDATE HoSoBenhNhan SET MaBN='" + txtMaBN.Text + "',TieusuBenhLy=N'" + txtTieuSuBenhLy.Text + "' where MaHSBN='" + txtMaHSBN.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
 
@@ -109,7 +125,7 @@ namespace BenhVienMat
 
         private void button5_Click(object sender, EventArgs e)
         {
-           
+            HoSoBenhNhan_Load(sender, e);
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
