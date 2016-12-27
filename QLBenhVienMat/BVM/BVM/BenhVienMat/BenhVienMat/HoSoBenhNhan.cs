@@ -141,15 +141,40 @@ namespace BenhVienMat
         private void button1_Click(object sender, EventArgs e)
         {
                 cn.Open();
-                string sql = "select * from HoSoBenhNhan Where MaHSBN like '%" + txtNhapTim.Text + "%'";
-                SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand(sql, cn);
-                cmd.ExecuteNonQuery();
-                sda.Fill(dt);
+                if (rdbMaHSBN.Checked == true)
+                {
+                    string sql = "select * from HoSoBenhNhan Where MaHSBN like '%" + txtNhapTim.Text + "%'";
+                    SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand(sql, cn);
+                    cmd.ExecuteNonQuery();
+                    sda.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    MessageBox.Show("Bạn vừa chọn tìm kiếm theo Mã HSBN ! ");
+                    return;
+
+                }
+                else if (rdbMaBN.Checked == true)
+                {
+                    string sql = "select * from HoSoBenhNhan Where MaBN like '%" + txtNhapTim.Text + "%'";
+                    SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand(sql, cn);
+                    cmd.ExecuteNonQuery();
+                    sda.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                    MessageBox.Show("Bạn vừa chọn tìm kiếm theo Mã BN ! ");
+                    return;
+                }
+                //string sql = "select * from HoSoBenhNhan Where MaHSBN like '%" + txtNhapTim.Text + "%'";
+                //SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
+                //DataTable dt = new DataTable();
+                //SqlCommand cmd = new SqlCommand(sql, cn);
+                //cmd.ExecuteNonQuery();
+                //sda.Fill(dt);
                 
-                dataGridView1.DataSource = dt;
-                cn.Close();
+                //dataGridView1.DataSource = dt;
+                //cn.Close();
         }
     }
 }
