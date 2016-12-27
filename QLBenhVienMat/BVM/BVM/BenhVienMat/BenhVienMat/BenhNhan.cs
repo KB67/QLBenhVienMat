@@ -140,15 +140,31 @@ namespace BenhVienMat
         private void bt6_Click(object sender, EventArgs e)
         {
             cn.Open();
-            string sql = "select * from BenhNhan Where MaBN like '%" + txtNhapTim.Text + "%'";
-            SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
-            DataTable dt = new DataTable();
-            SqlCommand cmd = new SqlCommand(sql, cn);
-            cmd.ExecuteNonQuery();
-            sda.Fill(dt);
+            if (rdbMaBN.Checked == true)
+            {
+                string sql = "select * from BenhNhan Where MaBN like '%" + txtNhapTim.Text + "%'";
+                SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                cmd.ExecuteNonQuery();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                MessageBox.Show("Bạn vừa chọn tìm kiếm theo Mã BN ! ");
+                return;
 
-            dataGridView1.DataSource = dt;
-            cn.Close();
+            }
+            else if (rdbTenBN.Checked == true)
+            {
+                string sql = "select * from BenhNhan Where Ten like N'%" + txtNhapTim.Text + "%'";
+                SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                cmd.ExecuteNonQuery();
+                sda.Fill(dt);
+                dataGridView1.DataSource = dt;
+                MessageBox.Show("Bạn vừa chọn tìm kiếm theo Tên Bệnh Nhân ! ");
+                return;
+            }
         }
 
         private void FormName_Click(object sender, EventArgs e)
