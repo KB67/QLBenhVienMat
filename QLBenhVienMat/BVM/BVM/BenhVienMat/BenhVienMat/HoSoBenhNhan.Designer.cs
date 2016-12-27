@@ -49,6 +49,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.dtbNgayKham = new System.Windows.Forms.DateTimePicker();
+            this.rdbMaHSBN = new System.Windows.Forms.RadioButton();
+            this.rdbMaBN = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -66,6 +68,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rdbMaBN);
+            this.groupBox1.Controls.Add(this.rdbMaHSBN);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtNhapTim);
             this.groupBox1.Controls.Add(this.label1);
@@ -79,7 +83,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(1120, 81);
+            this.button1.Location = new System.Drawing.Point(1173, 81);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(135, 54);
             this.button1.TabIndex = 3;
@@ -91,7 +95,7 @@
             // 
             this.txtNhapTim.Location = new System.Drawing.Point(137, 85);
             this.txtNhapTim.Name = "txtNhapTim";
-            this.txtNhapTim.Size = new System.Drawing.Size(945, 48);
+            this.txtNhapTim.Size = new System.Drawing.Size(471, 48);
             this.txtNhapTim.TabIndex = 1;
             // 
             // label1
@@ -250,6 +254,28 @@
             this.dtbNgayKham.Size = new System.Drawing.Size(448, 35);
             this.dtbNgayKham.TabIndex = 6;
             // 
+            // rdbMaHSBN
+            // 
+            this.rdbMaHSBN.AutoSize = true;
+            this.rdbMaHSBN.Location = new System.Drawing.Point(631, 86);
+            this.rdbMaHSBN.Name = "rdbMaHSBN";
+            this.rdbMaHSBN.Size = new System.Drawing.Size(290, 44);
+            this.rdbMaHSBN.TabIndex = 4;
+            this.rdbMaHSBN.TabStop = true;
+            this.rdbMaHSBN.Text = "Theo MaHSBN";
+            this.rdbMaHSBN.UseVisualStyleBackColor = true;
+            // 
+            // rdbMaBN
+            // 
+            this.rdbMaBN.AutoSize = true;
+            this.rdbMaBN.Location = new System.Drawing.Point(927, 88);
+            this.rdbMaBN.Name = "rdbMaBN";
+            this.rdbMaBN.Size = new System.Drawing.Size(240, 44);
+            this.rdbMaBN.TabIndex = 4;
+            this.rdbMaBN.TabStop = true;
+            this.rdbMaBN.Text = "Theo MaBN";
+            this.rdbMaBN.UseVisualStyleBackColor = true;
+            // 
             // HoSoBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -303,5 +329,7 @@
         private System.Windows.Forms.Button button2;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private System.Windows.Forms.DateTimePicker dtbNgayKham;
+        private System.Windows.Forms.RadioButton rdbMaBN;
+        private System.Windows.Forms.RadioButton rdbMaHSBN;
     }
 }
