@@ -20,6 +20,9 @@ namespace BenhVienMat
         {
             Form2 frmForm1 = new Form2();
             frmForm1.Show();
+            this.Hide();
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,6 +30,7 @@ namespace BenhVienMat
             
             Form1 frmForm1 = new Form1();
             frmForm1.Show();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -34,6 +38,7 @@ namespace BenhVienMat
             
             HoSoBenhNhan frmForm1 = new HoSoBenhNhan();
             frmForm1.Show();
+            this.Hide();
         }
 
         private void MainForm_Load(object sender, EventArgs e)

@@ -38,7 +38,6 @@
             this.bt6 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bt5 = new System.Windows.Forms.Button();
@@ -89,7 +88,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNhapTim.Location = new System.Drawing.Point(155, 56);
             this.txtNhapTim.Name = "txtNhapTim";
-            this.txtNhapTim.Size = new System.Drawing.Size(522, 48);
+            this.txtNhapTim.Size = new System.Drawing.Size(980, 48);
             this.txtNhapTim.TabIndex = 2;
             // 
             // label3
@@ -145,7 +144,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbb);
             this.groupBox2.Controls.Add(this.bt6);
             this.groupBox2.Controls.Add(this.txtNhapTim);
             this.groupBox2.Controls.Add(this.label1);
@@ -156,14 +154,6 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
-            // 
-            // cbb
-            // 
-            this.cbb.FormattingEnabled = true;
-            this.cbb.Location = new System.Drawing.Point(760, 56);
-            this.cbb.Name = "cbb";
-            this.cbb.Size = new System.Drawing.Size(381, 48);
-            this.cbb.TabIndex = 4;
             // 
             // label1
             // 
@@ -227,6 +217,7 @@
             this.bt4.TabIndex = 1;
             this.bt4.Text = "Lưu";
             this.bt4.UseVisualStyleBackColor = true;
+            this.bt4.Click += new System.EventHandler(this.bt4_Click);
             // 
             // bt3
             // 
@@ -328,6 +319,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtSDT);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bác Sĩ";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.groupBox2.ResumeLayout(false);
@@ -364,7 +356,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbb;
         private System.Windows.Forms.DateTimePicker dtbNgaySinh;
     }
 }

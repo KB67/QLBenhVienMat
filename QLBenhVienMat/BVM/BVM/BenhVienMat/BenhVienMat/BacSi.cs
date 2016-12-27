@@ -112,7 +112,7 @@ namespace BenhVienMat
         private void bt2_Click(object sender, EventArgs e)
         {
             cn.Open();
-            string sql = @"UPDATE BacSi SET MaBS='" + txtMaBS.Text + "',Ho='" + txtHo.Text + "',Ten='" + txtTen.Text + "',DiaChi='" + txtDiaChi.Text + "',SDT='" + txtSDT.Text + "'";
+            string sql = @"UPDATE BacSi SET Ho=N'" + txtHo.Text + "',Ten=N'" + txtTen.Text + "',DiaChi=N'" + txtDiaChi.Text + "',SDT='" + txtSDT.Text + "'Where MaBS='" + txtMaBS.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
             cn.Close();
@@ -128,23 +128,16 @@ namespace BenhVienMat
 
         private void bt6_Click(object sender, EventArgs e)
         {
-            if (cbb.Text == "Mã Bác Sĩ")
-            {
-                cn.Open();
-                SqlDataAdapter sda = new SqlDataAdapter(" SELECT * From dbo.BacSi WHERE MaBS like '" + txtNhapTim.Text + "'", cn);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dataGridView1.DataSource = dt;
-                if (dataGridView1.RowCount > 1)
-                {
-                    MessageBox.Show("Tìm thấy" + (dataGridView1.RowCount - 1) + "Bác Sĩ!");
+            cn.Open();
+            string sql = "select * from BacSi Where MaBS like '%" + txtNhapTim.Text + "%'";
+            SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand(sql, cn);
+            cmd.ExecuteNonQuery();
+            sda.Fill(dt);
 
-                }
-                if (dataGridView1.RowCount == -1)
-                {
-                    MessageBox.Show("Không Tìm Thấy");
-                }
-            }
+            dataGridView1.DataSource = dt;
+            cn.Close();
         }
 
         private void txtNgaySinh_TextChanged(object sender, EventArgs e)
@@ -155,6 +148,11 @@ namespace BenhVienMat
         private void dtbNgaySinh_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bt4_Click(object sender, EventArgs e)
+        {
+            Form2_Load(sender, e);
         }
     }
 }

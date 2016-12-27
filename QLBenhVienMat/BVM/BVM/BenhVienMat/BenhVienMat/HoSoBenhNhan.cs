@@ -140,23 +140,16 @@ namespace BenhVienMat
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cbb.Text == "Mã HSBN")
-            {
-                SqlDataAdapter sda = new SqlDataAdapter(" SELECT * From dbo.HoSoBenhNhan WHERE MaHSBN like '" + txtNhapTim.Text + "'", cn);
+                cn.Open();
+                string sql = "select * from HoSoBenhNhan Where MaHSBN like '%" + txtNhapTim.Text + "%'";
+                SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
                 DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand(sql, cn);
+                cmd.ExecuteNonQuery();
                 sda.Fill(dt);
+                
                 dataGridView1.DataSource = dt;
-                if (dataGridView1.RowCount > 1)
-                {
-                    MessageBox.Show("Tìm thấy" + (dataGridView1.RowCount - 1) + "Hồ Sơ!");
-
-                }
-                if (dataGridView1.RowCount == - 1)
-                {
-                    MessageBox.Show("Không Tìm Thấy");
-                }
-            }
-
+                cn.Close();
         }
     }
 }
