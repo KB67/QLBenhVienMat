@@ -116,7 +116,7 @@ namespace BenhVienMat
         private void bt2_Click(object sender, EventArgs e)
         {
             cn.Open();
-            string sql = @"UPDATE BenhNhan SET MaBN='" + txtMaBN.Text + "',Ho='" + txtHoBN.Text + "',Ten='" + txtTenBN.Text + "',DiaChi='" + txtDiaChi.Text + "',Gioitinh='" + txtGioiTinh.Text + "',Ngaysinh='" + txtNgaySinh.Text + "'";
+            string sql = @"UPDATE BenhNhan SET Ho=N'" + txtHoBN.Text + "',Ten=N'" + txtTenBN.Text + "',DiaChi=N'" + txtDiaChi.Text + "',Gioitinh=N'" + txtGioiTinh.Text + "',Ngaysinh='" + txtNgaySinh.Text + "'Where MaBN='" + txtMaBN.Text + "'";
             SqlCommand cmd = new SqlCommand(sql, cn);
             cmd.ExecuteNonQuery();
         }
@@ -139,22 +139,16 @@ namespace BenhVienMat
 
         private void bt6_Click(object sender, EventArgs e)
         {
-            if (cbb.Text == "Mã Bệnh Nhân")
-            {
-                SqlDataAdapter sda = new SqlDataAdapter(" SELECT * From dbo.BenhNhan WHERE MaBN like '" + txtNhapTim.Text + "'", cn);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                dataGridView1.DataSource = dt;
-                if (dataGridView1.RowCount > 1)
-                {
-                    MessageBox.Show("Tìm thấy" + (dataGridView1.RowCount - 1) + "Bệnh Nhân!");
+            cn.Open();
+            string sql = "select * from BenhNhan Where MaBN like '%" + txtNhapTim.Text + "%'";
+            SqlDataAdapter sda = new SqlDataAdapter(sql, cn);
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand(sql, cn);
+            cmd.ExecuteNonQuery();
+            sda.Fill(dt);
 
-                }
-                if (dataGridView1.RowCount == -1)
-                {
-                    MessageBox.Show("Không Tìm Thấy");
-                }
-            }
+            dataGridView1.DataSource = dt;
+            cn.Close();
         }
 
         private void FormName_Click(object sender, EventArgs e)

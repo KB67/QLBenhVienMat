@@ -30,7 +30,6 @@
         {
             this.FormName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbb = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.txtNhapTim = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,7 +66,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cbb);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtNhapTim);
             this.groupBox1.Controls.Add(this.label1);
@@ -78,15 +76,6 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm Kiếm";
-            // 
-            // cbb
-            // 
-            this.cbb.FormattingEnabled = true;
-            this.cbb.Location = new System.Drawing.Point(657, 85);
-            this.cbb.Name = "cbb";
-            this.cbb.Size = new System.Drawing.Size(369, 48);
-            this.cbb.TabIndex = 4;
-            this.cbb.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -102,7 +91,7 @@
             // 
             this.txtNhapTim.Location = new System.Drawing.Point(137, 85);
             this.txtNhapTim.Name = "txtNhapTim";
-            this.txtNhapTim.Size = new System.Drawing.Size(370, 48);
+            this.txtNhapTim.Size = new System.Drawing.Size(945, 48);
             this.txtNhapTim.TabIndex = 1;
             // 
             // label1
@@ -279,6 +268,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.FormName);
             this.Name = "HoSoBenhNhan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoSoBenhNhan";
             this.Load += new System.EventHandler(this.HoSoBenhNhan_Load);
             this.groupBox1.ResumeLayout(false);
@@ -311,7 +301,6 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox cbb;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private System.Windows.Forms.DateTimePicker dtbNgayKham;
     }

@@ -37,7 +37,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cbb = new System.Windows.Forms.ComboBox();
             this.bt6 = new System.Windows.Forms.Button();
             this.txtNhapTim = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -149,7 +148,6 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.cbb);
             this.groupBox2.Controls.Add(this.bt6);
             this.groupBox2.Controls.Add(this.txtNhapTim);
             this.groupBox2.Controls.Add(this.label1);
@@ -160,14 +158,6 @@
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm Kiếm";
-            // 
-            // cbb
-            // 
-            this.cbb.FormattingEnabled = true;
-            this.cbb.Location = new System.Drawing.Point(739, 56);
-            this.cbb.Name = "cbb";
-            this.cbb.Size = new System.Drawing.Size(391, 48);
-            this.cbb.TabIndex = 4;
             // 
             // bt6
             // 
@@ -186,7 +176,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNhapTim.Location = new System.Drawing.Point(155, 56);
             this.txtNhapTim.Name = "txtNhapTim";
-            this.txtNhapTim.Size = new System.Drawing.Size(501, 48);
+            this.txtNhapTim.Size = new System.Drawing.Size(969, 48);
             this.txtNhapTim.TabIndex = 2;
             this.txtNhapTim.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -369,7 +359,6 @@
         private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDiaChi;
-        private System.Windows.Forms.ComboBox cbb;
     }
 }
 
