@@ -1,3 +1,0 @@
-C:\Users\Khoi KB\Desktop\QLBenhVienMat\BVM\BenhVienMat\BenhVienMat\bin\Debug\BenhVienMat.exe.config
-C:\Users\Khoi KB\Desktop\QLBenhVienMat\BVM\BenhVienMat\BenhVienMat\obj\x86\Debug\BenhVienMat.exe
-C:\Users\Khoi KB\Desktop\QLBenhVienMat\BVM\BenhVienMat\BenhVienMat\obj\x86\Debug\BenhVienMat.pdb

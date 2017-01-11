@@ -52,6 +52,8 @@
             this.txtTen = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dtbNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.rdbMaBS = new System.Windows.Forms.RadioButton();
+            this.rdbTen = new System.Windows.Forms.RadioButton();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -88,7 +90,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNhapTim.Location = new System.Drawing.Point(155, 56);
             this.txtNhapTim.Name = "txtNhapTim";
-            this.txtNhapTim.Size = new System.Drawing.Size(980, 48);
+            this.txtNhapTim.Size = new System.Drawing.Size(538, 48);
             this.txtNhapTim.TabIndex = 2;
             // 
             // label3
@@ -124,7 +126,7 @@
             // bt6
             // 
             this.bt6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt6.Location = new System.Drawing.Point(1187, 53);
+            this.bt6.Location = new System.Drawing.Point(1209, 56);
             this.bt6.Name = "bt6";
             this.bt6.Size = new System.Drawing.Size(146, 52);
             this.bt6.TabIndex = 3;
@@ -144,6 +146,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rdbTen);
+            this.groupBox2.Controls.Add(this.rdbMaBS);
             this.groupBox2.Controls.Add(this.bt6);
             this.groupBox2.Controls.Add(this.txtNhapTim);
             this.groupBox2.Controls.Add(this.label1);
@@ -297,6 +301,28 @@
             this.dtbNgaySinh.TabIndex = 21;
             this.dtbNgaySinh.ValueChanged += new System.EventHandler(this.dtbNgaySinh_ValueChanged);
             // 
+            // rdbMaBS
+            // 
+            this.rdbMaBS.AutoSize = true;
+            this.rdbMaBS.Location = new System.Drawing.Point(721, 57);
+            this.rdbMaBS.Name = "rdbMaBS";
+            this.rdbMaBS.Size = new System.Drawing.Size(248, 44);
+            this.rdbMaBS.TabIndex = 4;
+            this.rdbMaBS.TabStop = true;
+            this.rdbMaBS.Text = "Theo Mã BS";
+            this.rdbMaBS.UseVisualStyleBackColor = true;
+            // 
+            // rdbTen
+            // 
+            this.rdbTen.AutoSize = true;
+            this.rdbTen.Location = new System.Drawing.Point(979, 57);
+            this.rdbTen.Name = "rdbTen";
+            this.rdbTen.Size = new System.Drawing.Size(202, 44);
+            this.rdbTen.TabIndex = 4;
+            this.rdbTen.TabStop = true;
+            this.rdbTen.Text = "Theo Tên";
+            this.rdbTen.UseVisualStyleBackColor = true;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -357,5 +383,7 @@
         private System.Windows.Forms.TextBox txtTen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtbNgaySinh;
+        private System.Windows.Forms.RadioButton rdbTen;
+        private System.Windows.Forms.RadioButton rdbMaBS;
     }
 }

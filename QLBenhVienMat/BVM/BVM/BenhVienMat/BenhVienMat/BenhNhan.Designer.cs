@@ -52,6 +52,8 @@
             this.txtGioiTinh = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
+            this.rdbMaBN = new System.Windows.Forms.RadioButton();
+            this.rdbTenBN = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -148,6 +150,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.rdbTenBN);
+            this.groupBox2.Controls.Add(this.rdbMaBN);
             this.groupBox2.Controls.Add(this.bt6);
             this.groupBox2.Controls.Add(this.txtNhapTim);
             this.groupBox2.Controls.Add(this.label1);
@@ -162,7 +166,7 @@
             // bt6
             // 
             this.bt6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bt6.Location = new System.Drawing.Point(1174, 52);
+            this.bt6.Location = new System.Drawing.Point(1218, 53);
             this.bt6.Name = "bt6";
             this.bt6.Size = new System.Drawing.Size(146, 52);
             this.bt6.TabIndex = 3;
@@ -176,7 +180,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNhapTim.Location = new System.Drawing.Point(155, 56);
             this.txtNhapTim.Name = "txtNhapTim";
-            this.txtNhapTim.Size = new System.Drawing.Size(969, 48);
+            this.txtNhapTim.Size = new System.Drawing.Size(538, 48);
             this.txtNhapTim.TabIndex = 2;
             this.txtNhapTim.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -298,6 +302,28 @@
             this.txtDiaChi.Size = new System.Drawing.Size(390, 48);
             this.txtDiaChi.TabIndex = 6;
             // 
+            // rdbMaBN
+            // 
+            this.rdbMaBN.AutoSize = true;
+            this.rdbMaBN.Location = new System.Drawing.Point(712, 57);
+            this.rdbMaBN.Name = "rdbMaBN";
+            this.rdbMaBN.Size = new System.Drawing.Size(158, 44);
+            this.rdbMaBN.TabIndex = 4;
+            this.rdbMaBN.TabStop = true;
+            this.rdbMaBN.Text = "Mã BN";
+            this.rdbMaBN.UseVisualStyleBackColor = true;
+            // 
+            // rdbTenBN
+            // 
+            this.rdbTenBN.AutoSize = true;
+            this.rdbTenBN.Location = new System.Drawing.Point(876, 57);
+            this.rdbTenBN.Name = "rdbTenBN";
+            this.rdbTenBN.Size = new System.Drawing.Size(300, 44);
+            this.rdbTenBN.TabIndex = 4;
+            this.rdbTenBN.TabStop = true;
+            this.rdbTenBN.Text = "Tên Bệnh Nhân";
+            this.rdbTenBN.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -359,6 +385,8 @@
         private System.Windows.Forms.TextBox txtGioiTinh;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtDiaChi;
+        private System.Windows.Forms.RadioButton rdbTenBN;
+        private System.Windows.Forms.RadioButton rdbMaBN;
     }
 }
 
